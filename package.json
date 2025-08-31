@@ -1,0 +1,25 @@
+{
+  "name": "qnaservice-tests",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "PLAYWRIGHT_JSON_OUTPUT_NAME=report.json playwright test tests/ui-*.spec.ts",
+    "test:api": "playwright test tests/api-*.spec.ts",
+    "test:ws": "playwright test tests/chat-websocket.spec.ts",
+    "allure:clean": "rimraf allure-results allure-report",
+    "allure:gen": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report",
+    "ci": "npm run allure:clean && playwright test --reporter=line,allure-playwright && allure generate allure-results --clean -o allure-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.47.0",
+    "@types/node": "^24.3.0",
+    "allure-commandline": "^2.29.0",
+    "allure-playwright": "^2.13.0",
+    "dotenv": "^16.6.1",
+    "rimraf": "^6.0.1",
+    "ws": "^8.18.0"
+  }
+}
