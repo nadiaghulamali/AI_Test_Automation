@@ -10,9 +10,9 @@ test('RAG API - upload, process, and ask question', async () => {
   const uploadRes = await apiContext.post(`${API_URL}/documents/upload/`, {
     multipart: {
       file: {
-        name: 'challengeOverview.md',
+        name: 'challengeOverview.txt',
         mimeType: 'text/markdown',
-        buffer: fs.readFileSync('tests/assets/challengeOverview.md'),
+        buffer: fs.readFileSync('tests/assets/challengeOverview.txt'),
       },
     },
   });

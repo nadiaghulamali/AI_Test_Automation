@@ -1,6 +1,6 @@
 export const testDoc = {
-    filename: 'challengeOverview.md',
-    pathRelative: './assets/challengeOverview.md'
+    filename: 'challengeOverview.txt',
+    pathRelative: './assets/challengeOverview.txt'
     };
     
     export const sampleQuestions: string[] = [
